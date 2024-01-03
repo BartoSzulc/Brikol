@@ -8,12 +8,12 @@
 // // - Abstracts 
 // @import 'abstracts/aos';
 // @import 'abstracts/animations';
-// @import 'abstracts/fonts';
+@import 'abstracts/fonts';
 
 
 // // - Components
-// @import 'components/buttons';
-// @import 'components/menu';
+@import 'components/buttons';
+@import 'components/menu';
 // @import 'components/form';
 // @import 'components/swiper';
 
@@ -29,7 +29,7 @@
 
 
 body {
-    @apply font-primary text-black md:text-desc text-base bg-purple-500;
+    @apply font-primary text-black md:text-desc text-base;
 }
 // h1, h2, h3, h4, h5, h6, .heading {
 //     @apply font-primary;

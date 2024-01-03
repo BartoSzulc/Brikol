@@ -33,8 +33,8 @@ export default async (app) => {
    * @see {@link https://bud.js.org/reference/bud.watch}
    */
   app
-    .setUrl('http://192.168.0.111:3000')
-    .setProxyUrl('http://szczecintoursplanner.local')
+    .setUrl('http://192.168.0.109:3000')
+    .setProxyUrl('http://brikol.local')
     .watch(['resources/views', 'app']);
 
   /**
