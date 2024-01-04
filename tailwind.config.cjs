@@ -14,7 +14,7 @@ module.exports = {
   content: ["./index.php", "./app/**/*.php", "./resources/**/*.{php,vue,js}"],
   theme: {
     screens: {
-      'xs': '360px',
+      'xs': '375px',
       ...defaultTheme.screens,
       '2xl': '1366px',
       '3xl': '1440px',
@@ -58,6 +58,7 @@ module.exports = {
       color4: '#EDD918',
       color5: "#FFF",
       color6: "#6B6B6B",
+      color7: '#F0F0F0',
 
     },
     spacing: {
