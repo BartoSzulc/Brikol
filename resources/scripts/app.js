@@ -10,24 +10,8 @@ domReady(async () => {
     let timeoutId;
     let clickCount = 0;
 
-    item.addEventListener('mouseover', function() {
-      clearTimeout(timeoutId);
-      if (isMobile) {
-        this.classList.add('toggle-menu');
-      }
-    });
-
-    item.addEventListener('mouseout', function() {
-      const element = this;
-      timeoutId = setTimeout(function() {
-        if (isMobile) {
-          element.classList.remove('toggle-menu');
-        }
-      }, 500);
-    });
-
-    item.addEventListener('click', function(event) {
-      if (isMobile) {
+    if (isMobile) {
+      item.addEventListener('click', function(event) {
         event.preventDefault();
         clickCount++;
         if (clickCount === 1) {
@@ -38,8 +22,20 @@ domReady(async () => {
             window.location.href = anchor.href;
           }
         }
-      }
-    });
+      });
+    } else {
+      item.addEventListener('mouseover', function() {
+        clearTimeout(timeoutId);
+        this.classList.add('toggle-menu');
+      });
+
+      item.addEventListener('mouseout', function() {
+        const element = this;
+        timeoutId = setTimeout(function() {
+          element.classList.remove('toggle-menu');
+        }, 500);
+      });
+    }
   });
   
   document.querySelectorAll('.js-button').forEach(button => {

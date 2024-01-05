@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col-span-full lg:col-span-6">
-                <img src="{{ asset('images/about.png') }}" alt="">
+                <img src="{{ asset('images/about-clip.png') }}" alt="">
             </div>
             <div class="col-span-full lg:col-span-3 flex flex-col">
                 <div class="text-h4 mb-half-mobile lg:mb-half">
@@ -72,6 +72,20 @@
                 <p>Lorem ipsum dolor sit amet consectetur. Egestas sem sapien consectetur risus amet sagittis fringilla donec suscipit.</p>
             </div>
         </div>
+        <div class="grid grid-cols-12 gap-5">
+            <div class="col-span-full lg:col-span-6">
+                {{-- kategoria relacja acf --}}
+
+            </div>
+            <div class="col-span-full lg:col-span-6">
+
+                {{-- j/w  --}}
+            </div>
+        </div>
+        <div class="w-full flex justify-center ">
+            <a href="#" class="btn btn--primary">Oferta</a>
+        </div>
     </div>
 </section>
+
 @endsection
