@@ -6,5 +6,5 @@
 npm-debug.log
 yarn-error.log
 auth.json
-composer.locl
+composer.lock
 package-lock.json

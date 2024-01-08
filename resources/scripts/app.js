@@ -1,53 +1,52 @@
-import domReady from '@roots/sage/client/dom-ready';
+// import LazyLoad from "vanilla-lazyload";
+import { domReady } from '@roots/sage/client';
+import Menu from "./components/Menu";
+import Carousels from "./components/Carousels";
+// import AOS from 'aos';
 
 /**
- * Application entrypoint
+ * app.main
  */
-domReady(async () => {
-  const isMobile = window.innerWidth < 1024;
 
-  document.querySelectorAll('.menu-item-has-children').forEach(item => {
-    let timeoutId;
-    let clickCount = 0;
+// window.setTimeout(function () {  AOS.init({
+//     offset: 0,
+//     duration: 600,
+//     easing: 'ease-in-sine',
+//     anchorPlacement: 'top-bottom'
+//   });
+// }, 500);
 
-    if (isMobile) {
-      item.addEventListener('click', function(event) {
-        event.preventDefault();
-        clickCount++;
-        if (clickCount === 1) {
-          this.classList.add('toggle-menu');
-        } else if (clickCount === 2) {
-          const anchor = this.querySelector('a');
-          if (anchor) {
-            window.location.href = anchor.href;
-          }
-        }
-      });
-    } else {
-      item.addEventListener('mouseover', function() {
-        clearTimeout(timeoutId);
-        this.classList.add('toggle-menu');
-      });
+const main = async (err) => {
 
-      item.addEventListener('mouseout', function() {
-        const element = this;
-        timeoutId = setTimeout(function() {
-          element.classList.remove('toggle-menu');
-        }, 500);
-      });
-    }
-  });
-  
-  document.querySelectorAll('.js-button').forEach(button => {
-    button.addEventListener('click', () => {
-      const menu = document.querySelector('.mobile-menu');
-      menu.classList.toggle('active');
-      document.body.classList.toggle('overflow-hidden');
-    });
-  });
-});
+
+  if (err) {
+    // handle hmr errors
+    console.error(err);
+  }
+
+  // let lazyLoad = new LazyLoad({
+  //   elements_selector: "[data-lazy]",
+  //   load_delay: 300,
+  // });
+
+  let menu = new Menu();
+  menu.init();
+
+  let carousels = new Carousels();
+  carousels.init();
+
+
+
+
+
+
+  // application code
+};
 
 /**
- * @see {@link https://webpack.js.org/api/hot-module-replacement/}
+ * Initialize
+ *
+ * @see https://webpack.js.org/api/hot-module-replacement
  */
-if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);
+domReady(main);
+import.meta.webpackHot?.accept(main);

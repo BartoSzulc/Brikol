@@ -1,7 +1,30 @@
 .home {
+    &__hero {
+       .triangle {
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+       }
+    }
     &__about {
         img {
             clip-path: url("../../images/clip-path.svg");
+        }
+    }
+    &__offer {
+        .triangle {
+           clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+    }
+    &__why-us {
+        .triangle {
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+    }
+    &__contact  {
+        .triangle {
+           clip-path: polygon(0 0, 100% 0, 100% 100%);
+           &-bottom {
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+           }
         }
     }
 }
