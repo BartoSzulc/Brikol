@@ -59,3 +59,30 @@ function placehold_img($size = '150x150', $format = 'png', $text_color = '#fff',
     }
     return $url;
 }
+
+function register_custom_post_type_realizacje() {  
+    $labels = array(
+        'name' => 'Realizacje',
+        'singular_name' => 'Realizacja',
+        'add_new' => 'Dodaj nową realizacje',
+        'add_new_item' => 'Dodaj nową realizacje',
+        'edit_item' => 'Edytuj realizacje',
+        'new_item' => 'Nowa realizacja',
+        'view_item' => 'Zobacz realizacje',
+        'search_items' => 'Szukaj realizacji',
+        'not_found' => 'Nie znaleziono realizacji',
+        'not_found_in_trash' => 'Nie znaleziono realizacji w koszu'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'menu_icon' => 'dashicons-format-gallery',
+
+    );
+
+    register_post_type('realizacje', $args);
+}
+add_action('init', __NAMESPACE__ . '\\register_custom_post_type_realizacje');

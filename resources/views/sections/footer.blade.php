@@ -1,5 +1,6 @@
 
 <footer class="footer relative overflow-hidden">
+    <div class="pointer-events-none bg-white absolute triangle__right -top-px -right-px h-20 w-20 lg:w-[160px] lg:h-[160px] z-10"></div>
     <div class="footer_bg--bg absolute bottom-0 w-full h-full bg-color1 flex">
         <img class="mix-blend-luminosity object-bottom object-cover w-full opacity-40" src="{{ asset('images/footer-bg.jpeg') }}" alt="">
     </div>

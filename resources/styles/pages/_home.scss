@@ -1,3 +1,11 @@
+.triangle-left {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+.triangle-right {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+
 .home {
     &__hero {
        .triangle {
@@ -19,6 +27,21 @@
             clip-path: polygon(0 0, 100% 0, 100% 100%);
         }
     }
+    &__testimonials {
+        .triangle {
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+    }
+    &__newsletter {
+        .triangle {
+            &__left {
+                clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            }
+            &__right {
+                clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            }
+        }
+    }
     &__contact  {
         .triangle {
            clip-path: polygon(0 0, 100% 0, 100% 100%);
@@ -26,5 +49,10 @@
             clip-path: polygon(0 0, 0% 100%, 100% 100%);
            }
         }
+    }
+}
+footer {
+    .triangle__right {
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
     }
 }

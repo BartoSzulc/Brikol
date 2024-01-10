@@ -1,0 +1,25 @@
+.form {
+    &__newsletter {
+        @apply relative flex items-center justify-center;
+        .form__input {
+            @apply h-20 w-[calc((655/1600)*100%)] flex relative;
+            &--prefix {
+                @apply h-full pl-30 flex bg-white text-base text-color1 font-semibold items-center justify-center relative;
+                &:after {
+                    content: "";
+                    @apply w-px h-[calc(100%-20px)] bg-color6/30 relative right-0 block mx-30 my-2.5;
+                } 
+            }
+        }
+        input {
+            @apply outline-0 bg-white h-20 box-border grow text-color1;
+            &::placeholder {
+                @apply text-color6;
+            }
+        }
+        .btn {
+            @apply min-w-[310px] text-color1 #{!important};
+            @apply right-0 translate-x-[40%] top-1/2 -translate-y-1/2 absolute;
+        }
+    }
+}

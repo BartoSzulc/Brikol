@@ -96,24 +96,24 @@ module.exports = {
 
       // https://modern-fluid-typography.vercel.app/
       // where u can get fluid typography
-      'h6': ['clamp(1.125rem, 0.3vw + 1rem, 1.25rem);', {
-        lineHeight: 1.5,
-        fontWeight: 500,
+      'h6': ['clamp(1.125rem, 1vw + 1rem, 1.125rem);', {
+        lineHeight: 1.44,
+        fontWeight: 600,
       }],
-      'h5': ['clamp(1.125rem, 0.3vw + 1rem, 1.25rem);', {
-        lineHeight: 1.5,
-        fontWeight: 500,
+      'h5': ['clamp(1.125rem, 1vw + 0.5rem, 1.375rem);', {
+        lineHeight: 1.36,
+        fontWeight: 600,
       }],
-      'h4': ['clamp(1.375rem, 1vw + 1rem, 1.625rem);', {
-        lineHeight: 1.38,
+      'h4': ['clamp(1.375rem, 1vw + 1rem, 1.5rem);', {
+        lineHeight: 1.42,
         fontWeight: 700,
       }],
-      'h3': ['clamp(1.625rem, 1.5vw + 1rem, 2.125rem);', {
+      'h3': ['clamp(1.5rem, 2vw + 0.75rem, 2.125rem);', {
         lineHeight: 1.29,
         fontWeight: 700,
       }],
 
-      'h2': ['clamp(2.25rem, 3vw + 1rem, 3rem);', {
+      'h2': ['clamp(2.125rem, 2vw + 1rem, 2.5rem);', {
         lineHeight: 1.20,
         fontWeight: 700,
       }],
