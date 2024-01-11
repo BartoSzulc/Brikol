@@ -10,6 +10,7 @@
     &__hero {
        .triangle {
         clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        
        }
     }
     &__about {
@@ -48,6 +49,13 @@
            &-bottom {
             clip-path: polygon(0 0, 0% 100%, 100% 100%);
            }
+        }
+        a {
+            @apply transition-colors duration-500 ease-in-out;
+            &:hover {
+                @apply text-color4;
+                @apply underline;
+            }
         }
     }
 }

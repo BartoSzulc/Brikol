@@ -1,6 +1,6 @@
 .form {
     &__newsletter {
-        @apply relative flex items-center justify-center;
+        @apply relative flex flex-col items-center justify-center;
         .form__input {
             @apply h-20 w-[calc((655/1600)*100%)] flex relative;
             &--prefix {
@@ -10,16 +10,109 @@
                     @apply w-px h-[calc(100%-20px)] bg-color6/30 relative right-0 block mx-30 my-2.5;
                 } 
             }
+            &-acceptance {
+                @apply h-auto mt-5; 
+                span {
+                    margin: 0;
+                }
+            }
+            .wpcf7-not-valid-tip {
+                
+            }
         }
-        input {
-            @apply outline-0 bg-white h-20 box-border grow text-color1;
-            &::placeholder {
-                @apply text-color6;
+        .wpcf7-form-control-wrap[data-name="tel-793"] {
+            @apply grow static;
+            input[type="tel"] {
+                @apply outline-0 w-full bg-white h-20 box-border text-color1;
+                &::placeholder {
+                    @apply text-color6;
+                }
             }
         }
         .btn {
-            @apply min-w-[310px] text-color1 #{!important};
-            @apply right-0 translate-x-[40%] top-1/2 -translate-y-1/2 absolute;
+            @apply min-w-[310px]  #{!important};
+            @apply translate-x-[40%] right-0 top-1/2 -translate-y-1/2 absolute text-color1;
+            &:hover {
+                @apply text-white;
+            }
         }
     }
+    &__serwis {
+        @apply relative flex flex-col items-center justify-center;
+        .form__input {
+            @apply flex items-center justify-start; 
+            .wpcf7-form-control-wrap {
+                @apply w-[calc((520/1600)*100%)];
+            }
+            input, textarea {
+                @apply outline-0 border border-[#0F142533]/20 bg-white text-color1 text-base box-border;
+                
+            } 
+            input {
+                @apply h-60;
+            }
+            textarea {
+                @apply h-[220px];
+            }
+            &-acceptance {
+                @apply h-auto mt-5; 
+                span {
+                    margin: 0;
+                }
+            }
+            .wpcf7-not-valid-tip {
+                
+            }
+        }
+        .btn {
+           
+            &:hover {
+                @apply text-white;
+            }
+        }
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+// validation errors ourput bottom of form
+.wpcf7-not-valid-tip {
+    @apply mt-0 absolute text-base left-0 -top-7 font-bold;
+}
+.wpcf7-response-output {
+    @apply text-color1 mt-14 border-color2 rounded border w-fit mx-auto bg-white transition-all text-base #{!important};
+}
+
+.wpcf7-validation-errors {
+    @apply text-color1  mt-14 border-red-900 rounded border w-fit mx-auto bg-white transition-all text-base #{!important};
+
+}
+//checkboxes
+.wpcf7-acceptance {
+   @apply relative  #{!important};
+   label span:before {
+       @apply flex items-center justify-center transition;
+       @apply h-[30px] w-[30px];
+       @apply shrink-0;
+       @apply relative;
+       @apply mr-2.5 lg:mr-5;
+       content: "";
+       background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='30' fill='white'/%3E%3C/svg%3E%0A");
+       @apply bg-no-repeat bg-center;
+       
+   }
+   a {
+        @apply underline transition-colors duration-500;
+        &:hover {
+            @apply text-color4;
+        }
+   }
+   .wpcf7-list-item-label {
+       @apply cursor-pointer flex items-center;
+   }
+}
+.wpcf7-acceptance label > input:checked + span:before {
+   background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='30' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 13L7 15L13 21L23 11L21 9L13 17L9 13Z' fill='%236B6B6B'/%3E%3C/svg%3E%0A");
 }

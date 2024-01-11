@@ -13,18 +13,7 @@
                 <div class="text-desc font-semibold mb-half">
                     <p>Twoja pierwsza linia produkcyjna? Zostaw numer - skontaktujemy się za darmo!</p>
                 </div>
-                <form action="">
-                    <div class="form__newsletter">
-                        <div class="form__input">
-                            <div class="form__input--prefix">
-                                <span>+48</span>
-                            </div>
-                            <input type="tel" placeholder="_ _ _   _ _ _   _ _ _">
-                            <button type="submit" class="wpcf7-form-control wpcf7-submit btn btn--primary "><span>wyślij kontakt</span></button>
-                        </div>
-                      
-                    </div>
-                </form>
+                {!! do_shortcode('[contact-form-7 id="866cbfe" title="Newsletter"]') !!}
             </div>
         </div>
     </div>
