@@ -11,11 +11,11 @@
             </div>
         </div>
         <div class="bg-white p-half-mobile lg:p-half">
-            <div class="text-base lg:text-desc text-color6 mb-half-mobile lg:mb-half">
-                {{ the_content() }}
-            </div>
             <div class="h-auto lg:h-[480px] relative lg:overflow-hidden flex">
                 <img class="max-lg:h-[350px] max-lg:w-full max-sm:h-[250px] relative lg:absolute object-center object-cover lg:top-1/2 lg:-translate-y-1/2" src="{{get_the_post_thumbnail_url()}}" alt="">
+            </div>
+            <div class="text-base lg:text-desc text-color6 mt-half-mobile lg:mt-half wysiwyg">
+                {{ the_content() }}
             </div>
         </div>
     </div>

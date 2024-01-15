@@ -38,26 +38,54 @@
         }
     }
     &__serwis {
-        @apply relative flex flex-col items-center justify-center;
+        @apply relative flex flex-col items-center justify-center gap-5;
+        .wpcf7-not-valid-tip {
+            @apply mt-0 absolute text-base left-0 -bottom-6 lg:bottom-auto top-auto lg:-top-5 font-bold;
+        }
         .form__input {
-            @apply flex items-center justify-start; 
-            .wpcf7-form-control-wrap {
-                @apply w-[calc((520/1600)*100%)];
-            }
-            input, textarea {
-                @apply outline-0 border border-[#0F142533]/20 bg-white text-color1 text-base box-border;
-                
+            @apply lg:flex items-center justify-start relative;
+            @apply w-full lg:w-[calc((520/1500)*100%)];
+            > label {
+                @apply lg:absolute lg:-left-5 lg:-translate-x-full;
             } 
+            .wpcf7-form-control-wrap {
+                @apply w-full h-full flex;
+                input, textarea {
+                    @apply w-full; 
+                    @apply outline-0 border border-[#0F142533]/20 bg-white text-color1 text-base box-border;
+                }
+            }
+            
             input {
-                @apply h-60;
+                @apply h-60 p-5;
             }
             textarea {
-                @apply h-[220px];
+                @apply h-[220px] p-5;
+            } 
+            &--message {
+                .wpcf7-form-control-wrap {
+                    @apply flex;
+                }
+                > label {
+                    @apply top-5;
+                }
             }
-            &-acceptance {
-                @apply h-auto mt-5; 
+            &--acceptance {
+                @apply h-auto; 
+                @apply w-full lg:w-full lg:w-[calc((520/1500)*100%)];
+                
+                .wpcf7-form-control-wrap {
+                    @apply w-full;
+                }
                 span {
                     margin: 0;
+                }
+            }
+            &--button {
+                @apply items-center justify-center;
+                @apply w-full lg:w-[calc((520/1500)*100%)] mt-2.5;
+                .btn {
+                    @apply min-w-full  #{!important};
                 }
             }
             .wpcf7-not-valid-tip {
@@ -80,6 +108,7 @@ input[type="checkbox"] {
 // validation errors ourput bottom of form
 .wpcf7-not-valid-tip {
     @apply mt-0 absolute text-base left-0 -top-7 font-bold;
+    @apply transition-all duration-500 ease-in-out;
 }
 .wpcf7-response-output {
     @apply text-color1 mt-14 border-color2 rounded border w-fit mx-auto bg-white transition-all text-base #{!important};

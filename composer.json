@@ -54,8 +54,8 @@
   ],
   "require": {
     "php": "^8.0",
-    "wpengine/advanced-custom-fields-pro": "6.0.7",
     "ezyang/htmlpurifier": "^4.16",
+    "generoi/sage-woocommerce": "^1.1",
     "johnbillion/extended-cpts": "^5.0",
     "log1x/acf-composer": "^2.1",
     "log1x/sage-directives": "^1.1",
@@ -64,7 +64,8 @@
     "slowprog/composer-copy-file": "^0.3.3",
     "wpackagist-plugin/contact-form-7": "dev-trunk",
     "wpackagist-plugin/contact-form-cfdb7": "dev-trunk",
-    "wpackagist-plugin/query-monitor": "dev-trunk"
+    "wpackagist-plugin/query-monitor": "dev-trunk",
+    "wpengine/advanced-custom-fields-pro": "6.0.7"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.7.2"

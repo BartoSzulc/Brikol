@@ -18,7 +18,7 @@
                         Przedsiębiorstwo oferuje granulatory i linie pelletujące w zakresach wydajności od 200 do 2500 kg/h.</p>
                 </div>
             </div>
-            <div class="col-span-full lg:col-span-6 relative">
+            <div class="col-span-full lg:col-span-6 relative flex items-center justify-center">
   
                 <img class="" src="{{ asset('images/about.png') }}" alt="">
             </div>

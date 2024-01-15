@@ -86,3 +86,56 @@ function register_custom_post_type_realizacje() {
     register_post_type('realizacje', $args);
 }
 add_action('init', __NAMESPACE__ . '\\register_custom_post_type_realizacje');
+
+function register_custom_post_type_produkty() {  
+    $labels = array(
+        'name' => 'Produkty',
+        'singular_name' => 'Produkt',
+        'add_new' => 'Dodaj nowy produkt',
+        'add_new_item' => 'Dodaj nowy produkt',
+        'edit_item' => 'Edytuj produkt',
+        'new_item' => 'Nowy produkt',
+        'view_item' => 'Zobacz produkt',
+        'search_items' => 'Szukaj produktów',
+        'not_found' => 'Nie znaleziono produktów',
+        'not_found_in_trash' => 'Nie znaleziono produktów w koszu'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'menu_icon' => 'dashicons-products',
+    );
+
+    register_post_type('produkty', $args);
+
+    // Dodaj taksonomię dla niestandardowego typu wpisu produkty
+    $taxonomy_labels = array(
+        'name' => 'Kategorie produktów',
+        'singular_name' => 'Kategoria produktu',
+        'search_items' => 'Szukaj kategorii',
+        'all_items' => 'Wszystkie kategorie',
+        'parent_item' => 'Kategoria nadrzędna',
+        'parent_item_colon' => 'Kategoria nadrzędna:',
+        'edit_item' => 'Edytuj kategorię',
+        'update_item' => 'Zaktualizuj kategorię',
+        'add_new_item' => 'Dodaj nową kategorię',
+        'new_item_name' => 'Nowa nazwa kategorii',
+        'menu_name' => 'Kategorie',
+    );
+
+    $taxonomy_args = array(
+        'hierarchical' => true,
+        'labels' => $taxonomy_labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'oferta'),
+    );
+
+    register_taxonomy('kategoria_produktu', 'produkty', $taxonomy_args);
+}
+add_action('init', 'register_custom_post_type_produkty');
+

@@ -5,10 +5,13 @@ import { Autoplay, EffectFade, Pagination, Navigation, } from 'swiper/modules';
 Swiper.use([Pagination, Autoplay, EffectFade, Navigation]);
 
 export default class Carousels extends Component {
+
     constructor() {
         super();
         this.heroSlider = document.querySelector('.home__hero') !== null;
         this.testimonialSlider = document.querySelector('.home__testimonials') !== null;
+        this.productSlider = document.querySelector('.single-produkty') !== null;
+        this.productSwipers = []; // Array to store productSwiper instances
     }
 
     init() {
@@ -32,6 +35,24 @@ export default class Carousels extends Component {
                         clickable: true,
                       },
                 });
+            });
+        }
+        if (this.productSlider) {
+            document.querySelectorAll('.productSwiper').forEach(el => {
+                let productSwiper = new Swiper(el, {
+                    effect: "fade",
+                    fadeEffect: {
+                        crossFade: true
+                    },
+                    simulateTouch: false,
+                    allowTouchMove: false,
+                    slidesPerView: 1,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                });
+                this.productSwipers.push(productSwiper);
             });
         }
         if (this.testimonialSlider) {
@@ -93,5 +114,8 @@ export default class Carousels extends Component {
                     }
             });
         }
+    }
+    getProductSwipers() {
+        return this.productSwipers;
     }
 }

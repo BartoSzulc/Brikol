@@ -15,7 +15,9 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
+    
 }, 100);
+// Woo script
 
 /**
  * Register the theme assets with the block editor.
