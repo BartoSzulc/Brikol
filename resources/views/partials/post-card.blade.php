@@ -1,3 +1,8 @@
+@php
+
+$year = get_field('year') ?? null;
+
+@endphp
 <div class="col-span-1 flex">
     <div class="flex flex-col realization__item bg-color7 hover:bg-white transition-all duration-500 ease-in-out hover:shadow-cien-1">
         <div class="realization__item__image relative">
@@ -7,9 +12,12 @@
                 @endif
             </a>
             <div class="pointer-events-none {{ $class ?? 'bg-white' }} absolute triangle-right -top-px -right-0.5 w-[calc((115/520)*100%)] h-[120px] flex items-start justify-end z-0">
+                
+                @if (!empty($year))
                 <div class="text-h6 text-color2 font-semibold">
-                    <p>2023</p>
+                    <p>{{ $year }}</p>
                 </div>
+                @endif
             </div>
         </div>
         <div class="grow realization__item__content lg:p-30 p-5 flex flex-col">

@@ -40,7 +40,7 @@
     &__serwis {
         @apply relative flex flex-col items-center justify-center gap-5;
         .wpcf7-not-valid-tip {
-            @apply mt-0 absolute text-base left-0 -bottom-6 lg:bottom-auto top-auto lg:-top-5 font-bold;
+            @apply mt-0 absolute text-base left-0 -bottom-6 lg:bottom-auto top-auto lg:-top-6 font-bold;
         }
         .form__input {
             @apply lg:flex items-center justify-start relative;

@@ -105,6 +105,7 @@ add_action('after_setup_theme', function () {
         'script',
         'style',
     ]);
+    add_image_size('full', false);
 
     /**
      * Enable selective refresh for widgets in customizer.

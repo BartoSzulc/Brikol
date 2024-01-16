@@ -5,10 +5,11 @@
         .item, 
         .item-additional {
             @apply w-[calc((335/1500)*100%)] flex;
-            @apply relative bg-color7 xl:text-desc text-base font-semibold ;
+            @apply relative bg-color7;
             @apply transition-all duration-500 ease-in-out cursor-pointer;
             label {
-                @apply cursor-pointer px-30 py-[27px] grow-0 w-full relative transition-all duration-500 ease-in-out;
+                @apply xl:text-desc text-base font-bold uppercase
+                cursor-pointer px-30 py-[27px] grow-0 w-full relative transition-all duration-500 ease-in-out;
                 &:hover {
                     @apply text-color4;
                 }
@@ -44,6 +45,36 @@
         }
         .swiper-slide {
             @apply flex items-center justify-center p-[15px];
+        }
+    }
+    .product-description {
+        .tablepress {
+            
+            thead {
+                @apply bg-color7;
+                th {
+                    @apply bg-color7 text-desc text-color1 font-bold border-t-2 border-white p-5 #{!important};
+
+                }
+                
+            }
+            tbody {
+                @apply bg-color7/50 #{!important};
+                tr {
+                    td {
+                        @apply text-base border-t-2 border-white p-5 relative #{!important};
+                        &:not(:first-child) {
+                            &:before {
+                                content: "";
+                                @apply absolute h-full w-0.5 bg-white block left-0 top-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ul {
+            @apply list-outside list-disc pl-5 leading-[34px];
         }
     }
 }
