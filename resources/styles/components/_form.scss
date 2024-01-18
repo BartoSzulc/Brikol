@@ -2,9 +2,9 @@
     &__newsletter {
         @apply relative flex flex-col items-center justify-center;
         .form__input {
-            @apply h-20 w-[calc((655/1600)*100%)] flex relative;
+            @apply h-20 w-full px-5 lg:px-0 lg:w-[calc((655/1600)*100%)] flex relative;
             &--prefix {
-                @apply h-full pl-30 flex bg-white text-base text-color1 font-semibold items-center justify-center relative;
+                @apply h-full pl-30 flex bg-white text-xs md:text-base text-color1 font-semibold items-center justify-center relative;
                 &:after {
                     content: "";
                     @apply w-px h-[calc(100%-20px)] bg-color6/30 relative right-0 block mx-30 my-2.5;
@@ -32,6 +32,15 @@
         .btn {
             @apply min-w-[310px]  #{!important};
             @apply translate-x-[40%] right-0 top-1/2 -translate-y-1/2 absolute text-color1;
+            &.button {
+                &-desktop {
+                    @apply hidden lg:block;
+                }
+                &-mobile {
+                    @apply block lg:hidden;
+                    @apply relative -translate-x-0 translate-y-0 top-0 mt-5;
+                }
+            }
             &:hover {
                 @apply text-white;
             }
@@ -40,7 +49,7 @@
     &__serwis {
         @apply relative flex flex-col items-center justify-center gap-5;
         .wpcf7-not-valid-tip {
-            @apply mt-0 absolute text-base left-0 -bottom-6 lg:bottom-auto top-auto lg:-top-6 font-bold;
+            @apply mt-0 absolute left-0 -bottom-4 lg:bottom-auto top-auto lg:-top-4 font-bold;
         }
         .form__input {
             @apply lg:flex items-center justify-start relative;
@@ -52,7 +61,7 @@
                 @apply w-full h-full flex;
                 input, textarea {
                     @apply w-full; 
-                    @apply outline-0 border border-[#0F142533]/20 bg-white text-color1 text-base box-border;
+                    @apply outline-0 border border-[#0F142533]/20 bg-white text-color1 text-xs md:text-base box-border;
                 }
             }
             
@@ -99,6 +108,74 @@
             }
         }
     }
+    &__produkt {
+        @apply relative flex flex-col items-center justify-center gap-5;
+        .wpcf7-not-valid-tip {
+            @apply mt-0 absolute left-0 -bottom-4 lg:bottom-auto top-auto lg:-top-4 font-bold;
+        }
+        .form {
+            &__group {
+                @apply grid grid-cols-1 lg:grid-cols-2 gap-5;
+                @apply w-full lg:w-[calc((1060/1400)*100%)];
+            }
+            
+        
+        }
+        .form__input {
+            @apply lg:flex items-center justify-start relative;
+            .wpcf7-form-control-wrap {
+                @apply w-full h-full flex;
+                input, textarea {
+                    @apply w-full; 
+                    @apply outline-0 border border-[#0F142533]/20 bg-white text-color1 text-xs md:text-base box-border;
+                }
+            }
+            input {
+                @apply h-60 p-5 outline-none;
+            }
+            textarea {
+                @apply h-[220px] p-5;
+            } 
+            &--title {
+                @apply w-full lg:w-[calc((1060/1400)*100%)];
+            }
+            &--message {
+                @apply w-full lg:w-[calc((1060/1400)*100%)];
+                .wpcf7-form-control-wrap {
+                    @apply flex;
+                }
+                > label {
+                    @apply top-5;
+                }
+            }
+            &--acceptance {
+                @apply h-auto; 
+               
+                .wpcf7-form-control-wrap {
+                    @apply w-full flex items-center;
+                }
+                span {
+                    margin: 0;
+                }
+            }
+            &--button {
+                @apply items-center justify-center;
+                
+                .btn {
+                    @apply min-w-full  #{!important};
+                }
+            }
+            .wpcf7-not-valid-tip {
+                
+            }
+        }
+        .btn {
+           
+            &:hover {
+                @apply text-white;
+            }
+        }
+    }
 }
 
 input[type="checkbox"] {
@@ -107,20 +184,20 @@ input[type="checkbox"] {
 
 // validation errors ourput bottom of form
 .wpcf7-not-valid-tip {
-    @apply mt-0 absolute text-base left-0 -top-7 font-bold;
+    @apply mt-0 absolute text-xs left-0 -top-5 font-bold;
     @apply transition-all duration-500 ease-in-out;
 }
 .wpcf7-response-output {
-    @apply text-color1 mt-14 border-color2 rounded border w-fit mx-auto bg-white transition-all text-base #{!important};
+    @apply text-color1 mt-14 border-color2 rounded border w-fit mx-auto bg-white transition-all text-xs md:text-base #{!important};
 }
 
 .wpcf7-validation-errors {
-    @apply text-color1  mt-14 border-red-900 rounded border w-fit mx-auto bg-white transition-all text-base #{!important};
+    @apply text-color1  mt-14 border-red-900 rounded border w-fit mx-auto bg-white transition-all text-xs md:text-base #{!important};
 
 }
 //checkboxes
 .wpcf7-acceptance {
-   @apply relative  #{!important};
+   @apply relative text-xs #{!important};
    label span:before {
        @apply flex items-center justify-center transition;
        @apply h-[30px] w-[30px];

@@ -139,3 +139,19 @@ function register_custom_post_type_produkty() {
 }
 add_action('init', 'register_custom_post_type_produkty');
 
+
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+  }
+add_filter('upload_mimes', 'cc_mime_types');
+
+pll_register_string('Brikol', 'Sprawdź cenę i zamów');
+pll_register_string('Brikol', 'zł');
+pll_register_string('Brikol', 'Cena:');
+pll_register_string('Brikol', 'Zapytaj o produkt');
+pll_register_string('Brikol', 'Zobacz więcej');
+pll_register_string('Brikol', 'Wszelkie prawa zastrzeżone © 2024');
+pll_register_string('Brikol', 'Realizacja:');
+pll_register_string('Brikol', 'Strona nie istnieje');
+pll_register_string('Brikol', 'Powrót');

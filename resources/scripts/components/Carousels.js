@@ -18,7 +18,7 @@ export default class Carousels extends Component {
         if (this.heroSlider) {
             document.querySelectorAll('.heroSwiper').forEach(el => {
                 new Swiper(el, {
-                    
+                    simulateTouch: false,
                     slidesPerView: 1,
                     effect: "fade",
                     speed: 2500,

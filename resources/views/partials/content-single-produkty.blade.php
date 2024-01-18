@@ -13,7 +13,7 @@ $product_simple = get_field('product_simple');
     <div class="pointer-events-none bg-white absolute triangle-right -top-px -right-px h-20 w-20 lg:w-[160px] lg:h-[160px] z-10"></div>
     <div class="container">
         <div class="w-full mb-half-mobile lg:mb-half">
-            <div class="text-h3 font-bold">
+            <div class="text-h4 lg:text-h3 font-bold"  data-aos="fade-up">
                     
                     @if ($custom_taxonomy_terms && !is_wp_error($custom_taxonomy_terms))
                         @foreach ($custom_taxonomy_terms as $term)
@@ -29,6 +29,7 @@ $product_simple = get_field('product_simple');
             @include ('partials.product-simple')
         @endif
         @include ('partials.product-description')
+        
         
     </div>
 </section>

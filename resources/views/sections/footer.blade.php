@@ -22,10 +22,10 @@
         @endif
         <div class="flex flex-col max-sm:text-center sm:flex-row space-y-5 sm:space-y-0 items-center justify-between text-white py-half-mobile lg:py-half">
             <div class="text-base">
-                <p>Wszelkie prawa zastrzeżone © 2024 <span class="text-color6">BRIKOL</span></p>
+                <p>{{ pll__('Wszelkie prawa zastrzeżone © 2024') }} <span class="text-color6"> {{ pll__('BRIKOL') }}</span></p>
             </div>
             <div class="text-base">
-                <p>Realizacja: <a class="text-color6 transition-colors duration-500 hover:text-color4" target="_blank" href="http://gregormedia.com.pl/">gregormedia.com.pl</a></p>
+                <p>{{ pll__('Realizacja:') }}<a class="text-color6 transition-colors duration-500 hover:text-color4" target="_blank" href="http://gregormedia.com.pl/"> gregormedia.com.pl</a></p>
             </div>
         </div>
     </div>

@@ -8,9 +8,13 @@
 
 .home {
     &__hero {
+        .heading {
+            br {
+                @apply hidden lg:block;
+            }
+        }
        .triangle {
-        clip-path: polygon(0 0, 0% 100%, 100% 100%);
-        
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
        }
     }
     &__about {
@@ -19,6 +23,9 @@
         }
     }
     &__offer {
+        .triangle__right {
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
         .triangle {
            clip-path: polygon(0 0, 100% 0, 100% 100%);
         }
@@ -51,10 +58,12 @@
            }
         }
         a {
-            @apply transition-colors duration-500 ease-in-out;
-            &:hover {
-                @apply text-color4;
-                @apply underline;
+            &:not(.btn) {
+                @apply transition-colors duration-500 ease-in-out;
+                &:hover {
+                    @apply text-color4;
+                    @apply underline;
+                }
             }
         }
     }
@@ -63,4 +72,37 @@ footer {
     .triangle__right {
         clip-path: polygon(100% 0, 0 0, 100% 100%);
     }
+}
+.polylang {
+    a {
+        @apply flex items-center text-base text-color6 gap-1 uppercase font-medium transition-all duration-500 ease-in-out;
+        &:hover {
+            @apply text-color4;
+        }
+        span {
+            margin: 0;
+        }
+    }
+}
+
+.wysiwyg {
+    h2 {
+        @apply text-h5 lg:text-h4 my-5;
+    }
+    h3 {
+        @apply text-h6 lg:text-h5 my-5;
+    }
+    h4 {
+        @apply text-h6 my-5;
+    }
+    ul {
+        @apply list-outside list-disc pl-5 lg:leading-[34px];
+    }
+    ol {
+        @apply list-outside list-decimal pl-5 lg:leading-[34px];
+    }
+    > * + * {
+        @apply mt-4;
+    }
+
 }

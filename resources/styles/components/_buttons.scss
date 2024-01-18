@@ -1,12 +1,12 @@
 .btn {
     
-    @apply text-button uppercase;
-    @apply flex h-60 box-border;
-    @apply min-w-[250px] inline-flex items-center justify-center;
+    @apply text-button uppercase max-sm:tracking-[0.5px];;
+    @apply flex h-half lg:h-60 box-border;
+    @apply min-w-[200px] lg:min-w-[250px] inline-flex items-center justify-center;
     @apply transition-all duration-500 ease-in-out relative;
     clip-path: polygon(0% 0%, calc(100% - 50px) 0%, 100% 100%, 50px 100%);
     span {
-        @apply relative z-10 px-[66px] pointer-events-none;
+        @apply relative z-10 px-[66px] pointer-events-none text-center;
     }
     &--primary {
        

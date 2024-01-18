@@ -7,17 +7,25 @@ $args = [
     'order' => 'DESC',
 ];
 $query = new WP_Query($args);
+
+$data = get_field('recent', 'option');
+$title = $data['title'] ?? null;
+$subtitle = $data['subtitle'] ?? null;
 @endphp
 
 <section class="bg-white py-half lg:py-full">
     <div class="container">
         <div class="w-full mb-half-mobile lg:mb-half">
-            <div class="text-h2 font-bold  mb-half-mobile lg:mb-half">
-                <h2>Zobacz także</h2>
+            @if (!empty($title))
+            <div class="text-h3 lg:text-h2 font-bold  mb-half-mobile lg:mb-half">
+               {!! $title !!}
             </div>
+            @endif
+            @if (!empty($subtitle))
             <div class="text-base lg:text-desc text-color6">
-                <p>Lorem ipsum dolor sit amet consectetur. Nisi tellus dictum pharetra tempor. Nisi urna tellus et venenatis. Eget malesuada orci turpis aenean rhoncus sed. Tincidunt at odio turpis pharetra ultrices amet nibh non lectus.</p>
+                {!! $subtitle !!}
             </div>
+            @endif
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-20 gap-5">
             @while ($query->have_posts())
