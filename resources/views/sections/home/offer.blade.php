@@ -45,7 +45,7 @@ $button_link_m = $data['button_link'] ?? null;
                     </div>
                     <div class="lg:p-half p-half-mobile flex flex-col relative z-10">
                         @if (!empty($title_0))
-                        <div class="text-h3 lg:text-h2 mb-half-mobile lg:mb-half"  data-aos="fade-up">
+                        <div class="text-h4 lg:text-h2 mb-half-mobile lg:mb-half"  data-aos="fade-up">
                             {!! $title_0 !!}
                         </div>
                         @endif
@@ -88,7 +88,7 @@ $button_link_m = $data['button_link'] ?? null;
                             </div>
                             <div class="lg:p-30 p-5 flex flex-col space-y-5 lg:space-y-30 relative z-10" >
                                 @if (!empty($title))
-                                <div class="text-h3 lg:text-h4"  data-aos="fade-up">
+                                <div class="text-h4 lg:text-h4"  data-aos="fade-up">
                                     {!! $title !!}
                                 </div>
                                 @endif

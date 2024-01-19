@@ -50,7 +50,7 @@
     .product-description {
         @apply overflow-hidden;
         .tablepress {
-            @apply max-lg:overflow-scroll block #{!important};
+            @apply max-lg:overflow-scroll max-lg:block #{!important};
             thead {
                 @apply bg-color7;
                 th {

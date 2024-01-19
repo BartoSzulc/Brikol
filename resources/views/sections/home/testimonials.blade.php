@@ -12,7 +12,7 @@
     <div class="container">
         <div class="w-full">
             @if (!empty($title))
-            <div class="text-h2"  data-aos="fade-up">
+            <div class="text-h3 lg:text-h2"  data-aos="fade-up">
                 {!! $title !!}
             </div>
             @endif

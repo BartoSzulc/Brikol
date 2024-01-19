@@ -21,7 +21,7 @@ $shortcode = $data['shortcode'] ?? null;
     <div class="container">
         <div class="w-full mb-half-mobile lg:mb-half">
           @if (!empty($title))
-            <div class="text-h3 font-bold"  data-aos="fade-up">
+            <div class="text-h3 font-bold" data-aos="fade-up">
                 {!! $title !!}
             </div>
           @endif
@@ -36,7 +36,7 @@ $shortcode = $data['shortcode'] ?? null;
               @endif
               <div class="h-auto lg:h-[480px] relative lg:overflow-hidden flex">
                   @if (get_the_post_thumbnail_url())
-                  <img  data-aos="fade-up" class="max-lg:h-[350px] max-lg:w-full max-sm:h-[250px] relative lg:absolute object-center object-cover lg:top-1/2 lg:-translate-y-1/2" src="{{ get_the_post_thumbnail_url() }}" alt="">
+                  <img class="max-lg:h-[350px] max-lg:w-full max-sm:h-[250px] relative lg:absolute object-center object-cover lg:top-1/2 lg:-translate-y-1/2" src="{{ get_the_post_thumbnail_url() }}" alt="">
                   @endif
               </div>
               <div class="bg-color7 pb-0 pt-half-mobile lg:py-half relative">

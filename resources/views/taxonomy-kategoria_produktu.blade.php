@@ -35,7 +35,7 @@ $query = new WP_Query($args);
          </div>
       </div>
       <div class="flex flex-col gap-half-mobile lg:gap-half">
-            <div class="bg-white p-half-mobile lg:p-halflg:p-half max-lg:w-[calc(100%+40px)] max-lg:-left-5 relative">
+            <div class="bg-white p-half-mobile lg:p-half max-lg:w-[calc(100%+40px)] max-lg:-left-5 relative">
             @if ($query->have_posts())
             <div class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 gap-5 xl:gap-half">
                @while ($query->have_posts())

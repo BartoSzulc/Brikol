@@ -13,12 +13,12 @@ $content = $data['content'] ?? null;
     <div class="container">
         <div class="w-full">
             @if (!empty($title))
-            <div class="text-h2"  data-aos="fade-up">
+            <div class="text-h3 lg:text-h2"  data-aos="fade-up">
                 {!! $title !!}
             </div>
             @endif
             @if (!empty($content))
-            <div class="text-desc my-half-mobile lg:my-half text-color6"  data-aos="fade-up">
+            <div class="text-base lg:text-desc my-half-mobile lg:my-half text-color6"  data-aos="fade-up">
                 {!! $content !!}
             </div>
             @endif

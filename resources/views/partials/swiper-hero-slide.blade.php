@@ -15,7 +15,7 @@
             </div>
             @endif
             @if (!empty($content))
-            <div class="text-xs lg:text-base 4xl:text-desc text-color6 mt-5 lg:mt-10"> 
+            <div class="text-base lg:text-base 4xl:text-desc text-color6 mt-5 lg:mt-10"> 
                 {!! $content !!}
                 
             </div>

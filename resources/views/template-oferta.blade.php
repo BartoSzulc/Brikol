@@ -50,7 +50,7 @@ $subtitle = $data['subtitle'] ?? null;
          ];
          $query = new WP_Query($args);
          @endphp
-         <div class="bg-white p-half-mobile lg:p-halflg:p-half max-lg:w-[calc(100%+40px)] max-lg:-left-5 relative">
+         <div class="bg-white p-half-mobile lg:p-half max-lg:w-[calc(100%+40px)] max-lg:-left-5 relative">
             @if ($query->have_posts())
             @php
             $term_obj = get_term($term->term_id, $taxonomy_name);

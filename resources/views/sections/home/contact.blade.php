@@ -47,7 +47,7 @@ $button_link_r = $right['button_link'] ?? null;
                     @endif
                 </div>
                 @if (!empty($button_link_l))
-                <div class="lg:inline-flex flex justify-center items-center mt-auto pt-5" data-aos="fade-up">
+                <div class="lg:inline-flex flex max-lg:justify-center items-center mt-auto pt-5" data-aos="fade-up">
                     <a class="btn btn--primary" target="{{ $button_link_l['target'] }}" href="{{ $button_link_l['url'] }}"><span>{{ $button_link_l['title'] }}</span></a>
                 </div>
                 @endif
@@ -78,7 +78,7 @@ $button_link_r = $right['button_link'] ?? null;
                     @endforeach
                 </div>
                 @if (!empty($button_link_r))
-                <div class="lg:inline-flex flex justify-center items-center" data-aos="fade-up">
+                <div class="lg:inline-flex flex max-lg:justify-center max-lg:items-center" data-aos="fade-up">
                     <a class="btn btn--primary" target="{{ $button_link_r['target'] }}" href="{{ $button_link_r['url'] }}"><span>{{ $button_link_r['title'] }}</span></a>
                 </div>
                 @endif

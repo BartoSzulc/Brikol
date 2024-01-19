@@ -155,3 +155,4 @@ pll_register_string('Brikol', 'Wszelkie prawa zastrzeżone © 2024');
 pll_register_string('Brikol', 'Realizacja:');
 pll_register_string('Brikol', 'Strona nie istnieje');
 pll_register_string('Brikol', 'Powrót');
+pll_register_string('Brikol', 'Zapytaj o produkt / złóż zamówienie:');

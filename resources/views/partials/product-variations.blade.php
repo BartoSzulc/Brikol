@@ -25,13 +25,13 @@ $elements_additional = $data['elements_additional'] ?? null;
     </div>
     @endif
     @if (!empty($elements))
-    <div class="lg:flex checkboxes grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
+    <div class="lg:flex checkboxes grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5"  data-aos="fade-up">
         @php $i = 1; @endphp
         @foreach ($elements as $element)
             @php
             $name = $element['name'] ?? null;
             @endphp
-            <div class="item" data-name="variation-{{ $i }}" data-slide="{{ $i }}"  data-aos="fade-up">
+            <div class="item" data-name="variation-{{ $i }}" data-slide="{{ $i }}" >
                 <input type="checkbox" id="variation-{{ $i }}">
                 <label class="relative z-10" for="variation-{{ $i }}">{{ $name }}</label>
                 <div class="absolute bg-white triangle h-full -top-px -right-px w-60 lg:w-[calc((90/335)*100%)] pointer-events-none"></div>
@@ -41,8 +41,8 @@ $elements_additional = $data['elements_additional'] ?? null;
     </div>
     @endif
     @if ($show_additional)
-    <div class="flex additional-checkbox mt-2 md:mt-5">
-        <div class="item-additional"  data-aos="fade-up">
+    <div class="flex additional-checkbox mt-2 md:mt-5"  data-aos="fade-up">
+        <div class="item-additional" >
             <input type="checkbox" id="additional-checkbox" data-slide="filtrowymiennik">
             @if (!empty($additional_name))
             <label class="relative z-10" for="additional-checkbox">
@@ -54,10 +54,10 @@ $elements_additional = $data['elements_additional'] ?? null;
     </div>
     @endif
     @if (!empty($elements))
-    <div class="swiper productSwiper">
+    <div class="swiper productSwiper"  data-aos="fade-up">
         <div class="swiper-wrapper">
             
-            <div class="swiper-slide w-full" data-slide="0" data-price="{{ $price_default }}"  data-aos="fade-up">
+            <div class="swiper-slide w-full" data-slide="0" data-price="{{ $price_default }}" >
                 0
                 <img src="{{ get_the_post_thumbnail_url() }}" alt="">
             </div>
@@ -67,7 +67,7 @@ $elements_additional = $data['elements_additional'] ?? null;
                 $image = $element['image'] ?? null;
                 $price = $element['price'] ?? null;
             @endphp
-            <div class="swiper-slide w-full" data-slide="{{ $i }}" data-price="{{ $price }}"  data-aos="fade-up">
+            <div class="swiper-slide w-full" data-slide="{{ $i }}" data-price="{{ $price }}"  >
                 {{ $i }}
                 <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}">
             </div>
