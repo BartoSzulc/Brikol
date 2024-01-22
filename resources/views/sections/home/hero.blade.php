@@ -3,7 +3,7 @@ $data = get_field('hero');
 @endphp
 
 @if (!empty($data))
-<section class="home__hero overflow-hidden bg-purple-500">
+<section class="home__hero overflow-hidden">
     <div class="container relative">
         <div class="swiper heroSwiper">
             <div class="swiper-wrapper">
