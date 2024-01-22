@@ -8,7 +8,7 @@ on:
 
 jobs:
   web-deploy:
-    name: 🎉 Build Project and Send to FTP
+    name: 🎉 Build Project and Send to FTPk
     runs-on: ubuntu-latest
 
     steps:
