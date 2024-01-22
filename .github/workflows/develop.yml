@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: "16"
-
       - name: 🚧 Build Project
         run: |
           yarn

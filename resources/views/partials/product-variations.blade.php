@@ -85,7 +85,7 @@ $elements_additional = $data['elements_additional'] ?? null;
                         {{ $j }}-filtro
                         <img src="{{ $image_additional['url'] }}" alt="{{ $image_additional['alt'] }}">
                     </div>
-                @endphp
+                
                 @php $j++; @endphp
                 @endforeach
             @endif
