@@ -80,7 +80,6 @@ $elements_additional = $data['elements_additional'] ?? null;
                 $price_additional = $element_additional['price'] ?? null;
                 @endphp
                     <div class="swiper-slide w-full" data-slide="filtrowymiennik {{ $j }}" data-price="{{ $price_additional }}">
-                        {{ $j }}-filtro
                         <img src="{{ $image_additional['url'] }}" alt="{{ $image_additional['alt'] }}">
                     </div>
                 
