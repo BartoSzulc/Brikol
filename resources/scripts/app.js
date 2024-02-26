@@ -113,8 +113,8 @@ items.forEach((item) => {
         if (this.checked) {
             item.classList.add('active');
             item.nextElementSibling?.classList.remove('disabled');
-            slideTo(slideIndex, additionalItem.classList.contains('active'));
-            additionalItem.classList.remove('disabled');
+            slideTo(slideIndex, additionalItem?.classList.contains('active'));
+            additionalItem?.classList.remove('disabled');
         } else {
             item.classList.remove('active');
             Array.from(item.parentElement.children).slice(slideIndex).forEach((nextItem) => {
@@ -123,13 +123,13 @@ items.forEach((item) => {
             });
             if (!document.querySelector('.item.active')) {
                 productSwipers[0].slideTo(0, 500);
-                additionalItem.classList.add('disabled');
+                additionalItem?.classList.add('disabled');
             } else {
-                slideTo(slideIndex - 1, additionalItem.classList.contains('active'));
+                slideTo(slideIndex - 1, additionalItem?.classList.contains('active'));
             }
         }
         if (!document.querySelector('.item.active')) {
-            additionalItem.classList.remove('active');
+            additionalItem?.classList.remove('active');
             updatePrice(null); // update to default price
         }
     });
