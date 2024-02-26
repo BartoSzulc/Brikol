@@ -87,4 +87,4 @@ $button_link_r = $right['button_link'] ?? null;
         </div>
     </div>
 </section>
-@endif;
+@endif

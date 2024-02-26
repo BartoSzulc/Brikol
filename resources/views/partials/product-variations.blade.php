@@ -58,7 +58,6 @@ $elements_additional = $data['elements_additional'] ?? null;
         <div class="swiper-wrapper">
             
             <div class="swiper-slide w-full" data-slide="0" data-price="{{ $price_default }}" >
-                0
                 <img src="{{ get_the_post_thumbnail_url() }}" alt="">
             </div>
             @php $i = 1; @endphp
@@ -68,7 +67,6 @@ $elements_additional = $data['elements_additional'] ?? null;
                 $price = $element['price'] ?? null;
             @endphp
             <div class="swiper-slide w-full" data-slide="{{ $i }}" data-price="{{ $price }}"  >
-                {{ $i }}
                 <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}">
             </div>
             @php $i++; @endphp
@@ -82,10 +80,9 @@ $elements_additional = $data['elements_additional'] ?? null;
                 $price_additional = $element_additional['price'] ?? null;
                 @endphp
                     <div class="swiper-slide w-full" data-slide="filtrowymiennik {{ $j }}" data-price="{{ $price_additional }}">
-                        {{ $j }}-filtro
                         <img src="{{ $image_additional['url'] }}" alt="{{ $image_additional['alt'] }}">
                     </div>
-                @endphp
+                
                 @php $j++; @endphp
                 @endforeach
             @endif
