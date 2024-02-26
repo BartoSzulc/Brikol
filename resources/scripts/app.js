@@ -102,7 +102,10 @@ items.forEach((item, index) => {
     }
 });
 
-additionalItem.classList.add('disabled');
+if (additionalItem) {
+    additionalItem.classList.add('disabled');
+
+}
 
 items.forEach((item) => {
     item.querySelector('input').addEventListener('change', function() {
@@ -132,30 +135,34 @@ items.forEach((item) => {
     });
 });
 
-additionalItem.querySelector('input').addEventListener('change', function() {
-    if (this.checked) {
-        if (!document.querySelector('.item.active')) {
-            additionalItem.classList.remove('active');
-            return;
-        }
-        additionalItem.classList.add('active');
-        const lastActiveItem = Array.from(items).filter(item => item.classList.contains('active')).pop();
-        const lastActiveSlideIndex = lastActiveItem ? parseInt(lastActiveItem.getAttribute('data-slide')) : 0;
-        slideTo(lastActiveSlideIndex, true);
-    } else {
-        additionalItem.classList.remove('active');
-        const lastActiveItemAfterUncheck = Array.from(items).filter(item => item.classList.contains('active')).pop();
-        if (lastActiveItemAfterUncheck) {
-            const lastActiveSlideIndexAfterUncheck = parseInt(lastActiveItemAfterUncheck.getAttribute('data-slide'));
-            slideTo(lastActiveSlideIndexAfterUncheck, false);
+if (additionalItem) {
+    
+    additionalItem.querySelector('input').addEventListener('change', function() {
+        if (this.checked) {
+            if (!document.querySelector('.item.active')) {
+                additionalItem.classList.remove('active');
+                return;
+            }
+            additionalItem.classList.add('active');
+            const lastActiveItem = Array.from(items).filter(item => item.classList.contains('active')).pop();
+            const lastActiveSlideIndex = lastActiveItem ? parseInt(lastActiveItem.getAttribute('data-slide')) : 0;
+            slideTo(lastActiveSlideIndex, true);
         } else {
-            productSwipers[0].slideTo(0, 500);
-            additionalItem.classList.add('disabled');
-            updatePrice(null); // update to default price
+            additionalItem.classList.remove('active');
+            const lastActiveItemAfterUncheck = Array.from(items).filter(item => item.classList.contains('active')).pop();
+            if (lastActiveItemAfterUncheck) {
+                const lastActiveSlideIndexAfterUncheck = parseInt(lastActiveItemAfterUncheck.getAttribute('data-slide'));
+                slideTo(lastActiveSlideIndexAfterUncheck, false);
+            } else {
+                productSwipers[0].slideTo(0, 500);
+                additionalItem.classList.add('disabled');
+                updatePrice(null); // update to default price
+            }
         }
-    }
-});
+    });
+    
 
+}
 // application code
 };
 
