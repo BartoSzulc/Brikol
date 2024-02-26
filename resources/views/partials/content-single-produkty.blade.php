@@ -17,7 +17,11 @@ $product_simple = get_field('product_simple');
                     
                     @if ($custom_taxonomy_terms && !is_wp_error($custom_taxonomy_terms))
                         @foreach ($custom_taxonomy_terms as $term)
-                            {{ $term->name }}
+                            <a class="transition-all duration-500 ease-in-out hover:!text-color2" href="{{ get_term_link( $term ) }}">
+                                {{ $term->name }}
+                            </a>
+                           
+                            
                         @endforeach
                     @endif
                   
