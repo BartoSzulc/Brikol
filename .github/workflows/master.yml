@@ -2,9 +2,9 @@ name: 🚀 Deploy CI theme on Production Server
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   web-deploy:
