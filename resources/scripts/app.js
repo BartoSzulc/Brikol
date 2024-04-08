@@ -5,7 +5,7 @@ import Carousels from "./components/Carousels";
 import Swiper from 'swiper';
 import GLightbox from 'glightbox';
 import AOS from 'aos';
-
+import $ from 'jquery';
 
 /**
  * app.main
@@ -102,7 +102,10 @@ items.forEach((item, index) => {
     }
 });
 
-additionalItem.classList.add('disabled');
+if (additionalItem) {
+    additionalItem.classList.add('disabled');
+
+}
 
 items.forEach((item) => {
     item.querySelector('input').addEventListener('change', function() {
@@ -110,8 +113,8 @@ items.forEach((item) => {
         if (this.checked) {
             item.classList.add('active');
             item.nextElementSibling?.classList.remove('disabled');
-            slideTo(slideIndex, additionalItem.classList.contains('active'));
-            additionalItem.classList.remove('disabled');
+            slideTo(slideIndex, additionalItem?.classList.contains('active'));
+            additionalItem?.classList.remove('disabled');
         } else {
             item.classList.remove('active');
             Array.from(item.parentElement.children).slice(slideIndex).forEach((nextItem) => {
@@ -120,42 +123,81 @@ items.forEach((item) => {
             });
             if (!document.querySelector('.item.active')) {
                 productSwipers[0].slideTo(0, 500);
-                additionalItem.classList.add('disabled');
+                additionalItem?.classList.add('disabled');
             } else {
-                slideTo(slideIndex - 1, additionalItem.classList.contains('active'));
+                slideTo(slideIndex - 1, additionalItem?.classList.contains('active'));
             }
         }
         if (!document.querySelector('.item.active')) {
-            additionalItem.classList.remove('active');
+            additionalItem?.classList.remove('active');
             updatePrice(null); // update to default price
         }
     });
 });
 
-additionalItem.querySelector('input').addEventListener('change', function() {
-    if (this.checked) {
-        if (!document.querySelector('.item.active')) {
-            additionalItem.classList.remove('active');
-            return;
-        }
-        additionalItem.classList.add('active');
-        const lastActiveItem = Array.from(items).filter(item => item.classList.contains('active')).pop();
-        const lastActiveSlideIndex = lastActiveItem ? parseInt(lastActiveItem.getAttribute('data-slide')) : 0;
-        slideTo(lastActiveSlideIndex, true);
-    } else {
-        additionalItem.classList.remove('active');
-        const lastActiveItemAfterUncheck = Array.from(items).filter(item => item.classList.contains('active')).pop();
-        if (lastActiveItemAfterUncheck) {
-            const lastActiveSlideIndexAfterUncheck = parseInt(lastActiveItemAfterUncheck.getAttribute('data-slide'));
-            slideTo(lastActiveSlideIndexAfterUncheck, false);
+if (additionalItem) {
+    
+    additionalItem.querySelector('input').addEventListener('change', function() {
+        if (this.checked) {
+            if (!document.querySelector('.item.active')) {
+                additionalItem.classList.remove('active');
+                return;
+            }
+            additionalItem.classList.add('active');
+            const lastActiveItem = Array.from(items).filter(item => item.classList.contains('active')).pop();
+            const lastActiveSlideIndex = lastActiveItem ? parseInt(lastActiveItem.getAttribute('data-slide')) : 0;
+            slideTo(lastActiveSlideIndex, true);
         } else {
-            productSwipers[0].slideTo(0, 500);
-            additionalItem.classList.add('disabled');
-            updatePrice(null); // update to default price
+            additionalItem.classList.remove('active');
+            const lastActiveItemAfterUncheck = Array.from(items).filter(item => item.classList.contains('active')).pop();
+            if (lastActiveItemAfterUncheck) {
+                const lastActiveSlideIndexAfterUncheck = parseInt(lastActiveItemAfterUncheck.getAttribute('data-slide'));
+                slideTo(lastActiveSlideIndexAfterUncheck, false);
+            } else {
+                productSwipers[0].slideTo(0, 500);
+                additionalItem.classList.add('disabled');
+                updatePrice(null); // update to default price
+            }
         }
-    }
-});
+    });
+    
 
+}
+$('a[href*="#"]')
+// Remove links that don't actually link to anything
+.not('[href="#"]')
+.not('[href="#0"]')
+.click(function (event) {
+  // On-page links
+  if (
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    &&
+    location.hostname == this.hostname
+  ) {
+    // Figure out element to scroll to
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    // Does a scroll target exist?
+    if (target.length) {
+      // Only prevent default if animation is actually gonna happen
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1500, function () {
+        // Callback after animation
+        // Must change focus!
+        var $target = $(target);
+        $target.focus();
+        if ($target.is(":focus")) { // Checking if the target was focused
+          return false;
+        } else {
+          $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+          $target.focus(); // Set focus again
+        };
+      });
+    }
+  }
+});
 // application code
 };
 
