@@ -163,6 +163,45 @@ if (additionalItem) {
     
 
 }
+
+if (items.length > 0) {
+    // Set the first item's checkbox to checked
+    const firstItemCheckbox = items[0].querySelector('input[type="checkbox"]');
+    if (firstItemCheckbox) {
+        firstItemCheckbox.checked = true;
+        
+        // Manually trigger a change event on the first item's checkbox
+        // This will cause the event listener you've set up to run
+        const event = new Event('change');
+        firstItemCheckbox.dispatchEvent(event);
+        
+        // Since the first item is now active by default, you might want to ensure
+        // that the UI reflects this state correctly without waiting for user interaction.
+        items[0].classList.add('active');
+        if (items.length > 1) {
+            items[1].classList.remove('disabled'); // Enable the second item
+        }
+    }
+}
+if (items.length > 0) {
+    // Set the first item's checkbox to checked
+    const firstItemCheckbox = items[0].querySelector('input[type="checkbox"]');
+    if (firstItemCheckbox) {
+        firstItemCheckbox.checked = true;
+        
+        // Manually trigger a change event on the first item's checkbox
+        // This will cause the event listener you've set up to run
+        const event = new Event('change');
+        firstItemCheckbox.dispatchEvent(event);
+        
+        // Since the first item is now active by default, you might want to ensure
+        // that the UI reflects this state correctly without waiting for user interaction.
+        items[0].classList.add('active');
+        if (items.length > 1) {
+            items[1].classList.remove('disabled'); // Enable the second item
+        }
+    }
+}
 $('a[href*="#"]')
 // Remove links that don't actually link to anything
 .not('[href="#"]')
